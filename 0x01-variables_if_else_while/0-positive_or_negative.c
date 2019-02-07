@@ -5,8 +5,8 @@
 /**
  *main - Entry point
  *
- *
  *srand: random values
+ *
  *printf: print n positive, negative or zero
  *
  *Return: Always 0 (success)
@@ -27,12 +27,12 @@ int main(void)
 
 	else if (n < 0)
 	{
-		printf("%d is negative \n", n);
+		printf("%d is negative\n", n);
 	}
 
 	else if (n == 0)
 	{
-		printf("%d is zero \n", n);
+		printf("%d is zero\n", n);
 	}
 
 	return (0);
