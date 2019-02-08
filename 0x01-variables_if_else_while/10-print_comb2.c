@@ -23,7 +23,12 @@ int main(void)
 			putchar(n);
 			putchar(N);
 
-			if (N < 57)
+			if (N == 57 && n == 57)
+			{
+				;
+			}
+
+			else if (N <= 57)
 			{
 				putchar(44);
 				putchar(32);
