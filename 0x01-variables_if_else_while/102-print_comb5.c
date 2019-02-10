@@ -24,7 +24,7 @@ int main(void)
 			{
 				for (n4 = 48; n4 < 58; n4++)
 				{
-					if (n1 + n2 < n3 + n4 || n2 < n4)
+					if (n1 < n3)
 					{
 						putchar(n1);
 						putchar(n2);
@@ -32,7 +32,31 @@ int main(void)
 						putchar(n3);
 						putchar(n4);
 
-						if (n1 != 57 || n2 != 56 || n3 != 57 || n4 != 57)
+						if (n1 + n2 != 57 + 56)
+						{
+							putchar(44);
+							putchar(32);
+						}
+						else if (n3 != 57 || n4 != 57)
+						{
+							putchar(44);
+							putchar(32);
+						}
+					}
+					else if (n1 + n2 < n3 + n4 && n1 <= n3)
+					{
+						putchar(n1);
+						putchar(n2);
+						putchar(32);
+						putchar(n3);
+						putchar(n4);
+
+						if (n1 + n2 != 57 + 56)
+						{
+							putchar(44);
+							putchar(32);
+						}
+						else if (n3 != 57 || n4 != 57)
 						{
 							putchar(44);
 							putchar(32);
