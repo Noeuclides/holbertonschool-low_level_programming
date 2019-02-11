@@ -32,7 +32,7 @@ int main(void)
 						putchar(n3);
 						putchar(n4);
 
-						if (n1 - n2 != 57 - 56 || n3 + n4 != 57 + 57)
+						if (n1 !+= 57 || n2 != 56 || n3 != 57 || n4 != 57)
 						{
 							putchar(44);
 							putchar(32);
