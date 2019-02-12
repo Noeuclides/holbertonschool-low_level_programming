@@ -1,19 +1,21 @@
 #include "holberton.h"
+
 /**
- *main - entry point
+ *print_alphabet - calls put char
  *
- *_putchar: put char
+ *print_alphabet: writes the a to z c to stdout
  *
- *Return: Always 0 (success)
+ *_putchar: put character
+ *
  */
 
-int main(void)
+void print_alphabet(void)
 {
-	
+	int n;
 
-	_putchar(print_alphabet());
-
+	for (n = 'a'; n <= 'z'; n++)
+	{
+		_putchar(n);
+	}
 	_putchar('\n');
-
-	return (0);
 }
