@@ -1,0 +1,24 @@
+#include "holberton.h"
+
+/**
+ *_islower - 1 if is lowercase 0 else
+ *
+ *@c: lowcase or something else character
+ *
+ *_putchar: put character
+ *
+ *Return: 0 always (success)
+ */
+
+int _islower(int c)
+{
+
+	if (c <= 97 && c >= 122)
+	{
+		return (1);
+	}
+
+	return (0);
+
+
+}
