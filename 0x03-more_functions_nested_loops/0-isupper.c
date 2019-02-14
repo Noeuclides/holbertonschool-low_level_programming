@@ -1,7 +1,9 @@
 #include "holberton.h"
 
 /**
- *int_isupper - check if a character is upper case
+ *_isupper - check if a character is upper case
+ *
+ *@c: variable char
  *
  *_putchar: put character
  *
@@ -12,7 +14,7 @@ int _isupper(int c)
 {
 	if (c >= 65 && c <= 90)
 	{
-		return(1);
+		return (1);
 	}
 
 	return (0);
