@@ -23,7 +23,12 @@ int main(void)
 		else if (n % 5 == 0)
 		{
 			m = "Buzz";
-			printf("%s ", m);
+			if (n == 100)
+			{
+				printf("%s", m);
+			}
+			else
+				printf("%s ", m);
 		}
 		else if (n % 3 == 0)
 		{
