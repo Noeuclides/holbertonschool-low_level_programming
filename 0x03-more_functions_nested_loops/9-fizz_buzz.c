@@ -31,7 +31,9 @@ int main(void)
 			printf("%s ", m);
 		}
 		else
+		{
 			printf("%d ", n);
+		}
 	}
 	printf("\n");
 	return (0);
