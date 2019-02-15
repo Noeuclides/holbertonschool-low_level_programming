@@ -1,9 +1,9 @@
 #include "holberton.h"
 
 /**
- *print_square - print "\"
+ *print_square - print square with # char
  *
- *@n: times to print "_"
+ *@size: the size of the square
  *
  *_putchar: put character
  *
