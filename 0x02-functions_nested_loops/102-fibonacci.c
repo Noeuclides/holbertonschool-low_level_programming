@@ -10,10 +10,10 @@
 
 int main(void)
 {
-	int x = 1;
-	int y = 0;
-	int z;
-	int i;
+	long x = 1;
+	long y = 0;
+	long z;
+	long i;
 
 	for (i = 0; i < 50; i++)
 	{
@@ -21,10 +21,10 @@ int main(void)
 
 		if (i != 49)
 		{
-			printf("%d, ", z);
+			printf("%ld, ", z);
 		}
 		else
-			printf("%d\n", z);
+			printf("%ld\n", z);
 
 		y = x;
 		x = z;
