@@ -29,5 +29,5 @@ int main(void)
 		y = x;
 		x = z;
 	}
-	return(0);
+	return (0);
 }
