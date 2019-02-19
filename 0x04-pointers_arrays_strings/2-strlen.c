@@ -13,9 +13,9 @@ int _strlen(char *s)
 	int i;
 	int len;
 
-	len = 1;
+	len = 0;
 
-	for (i = 0; i < len; i++)
+	for (i = -1; i < len; i++)
 	{
 		if ((s[len] == '\0'))
 		{
