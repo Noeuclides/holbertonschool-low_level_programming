@@ -1,0 +1,26 @@
+#include "holberton.h"
+
+/**
+*rev_string - print string backwards
+*
+*@s: a string variable
+*
+*/
+
+void rev_string(char *s)
+{
+	int i;
+	int len;
+	char aux;
+
+	while (*(s + len) != '\0')
+	{
+		len++;
+	}
+
+	for (i = len; i >= 0; i--)
+	{
+		aux = s[len - i];
+		s[i] = aux;
+	}
+}
