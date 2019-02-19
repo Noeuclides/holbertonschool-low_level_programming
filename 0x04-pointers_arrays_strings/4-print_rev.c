@@ -1,9 +1,9 @@
 #include "holberton.h"
 
 /**
-*print_rev - print string
+*print_rev - print string backwards
 *
-*@str: a character variable
+*@s: a character variable
 *
 */
 
