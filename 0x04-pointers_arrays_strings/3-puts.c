@@ -5,7 +5,6 @@
 *
 *@str: a character variable
 *
-*Return: return integer lenght of the array
 */
 
 void _puts(char *str)
@@ -17,16 +16,18 @@ void _puts(char *str)
 
 	for (i = -1; i < len; i++)
 	{
-		_putchar(str[len]);
-
 		if ((str[len] == '\0'))
 		{
 			len = i;
 		}
 		else
 		{
+			_putchar(str[len]);
 			len++;
 		}
+
 	}
-	_putchar(10);
+
+	_putchar('\n');
+
 }
