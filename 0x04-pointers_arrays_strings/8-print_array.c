@@ -4,8 +4,9 @@
 /**
 *print_array - print list of items on a array
 *
-*@str: a string variable
+*@a: array
 *
+*@n: number of elements of an array
 */
 
 void print_array(int *a, int n)
@@ -19,6 +20,6 @@ void print_array(int *a, int n)
 			printf("%d, ", *(a + i));
 		}
 		else
-			printf ("%d\n", *(a + i));
+			printf("%d\n", *(a + i));
 	}
 }
