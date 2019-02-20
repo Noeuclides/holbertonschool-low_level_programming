@@ -1,11 +1,13 @@
 #include "holberton.h"
 
 /**
-**_strcpy - print list of items on a array
+* *_strcpy - change the value of a string point to
 *
 *@dest: variable
 *
 *@src: string
+*
+*Return: character
 */
 
 char *_strcpy(char *dest, char *src)
@@ -17,10 +19,10 @@ char *_strcpy(char *dest, char *src)
 	}
 
 
-	for (j = 0; j < i; j++)
+	for (j = 0; j <= i; j++)
 	{
 		*(dest + j) = *(src + j);
 	}
 
-	return(dest);
+	return (dest);
 }
