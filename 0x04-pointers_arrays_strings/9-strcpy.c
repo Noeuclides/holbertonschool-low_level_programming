@@ -3,22 +3,24 @@
 /**
 **_strcpy - print list of items on a array
 *
-*@a: array
+*@dest: variable
 *
-*@n: number of elements of an array
+*@src: string
 */
 
 char *_strcpy(char *dest, char *src)
 {
-	int i;
+	int i, j;
 
-	for (i = 0; i <= n - 1; i++)
+	for (i = 0; src[i] != '\0'; i++)
 	{
-		if (i != n - 1)
-		{
-			printf("%d, ", *(a + i));
-		}
-		else
-			printf("%d\n", *(a + i));
 	}
+
+
+	for (j = 0; j < i; j++)
+	{
+		*(dest + j) = *(src + j);
+	}
+
+	return(dest);
 }
