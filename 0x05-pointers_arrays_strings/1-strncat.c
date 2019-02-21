@@ -1,9 +1,13 @@
-#+-*include "holberton.h"
+#include "holberton.h"
 
 /**
  *_strncat - concatenates two strings
  *
- *_putchar: put a character
+ *@dest: destination string
+ *
+ *@src: source string
+ *
+ *@n: limit of the destination string
  *
  *Return: return a character
  */
@@ -17,12 +21,11 @@ char *_strncat(char *dest, char *src, int n)
 	{
 	}
 
-	for (j = 0; src[j] != '\0'; j++)
+	for (j = 0; j < n; j++)
 	{
-		*(dest + i) = *(src + j);
-		i++;
+		*(dest + i + j) = *(src + j);
 	}
 	*(dest + i + j) = '\0';
 
-	return(dest);
+	return (dest);
 }
