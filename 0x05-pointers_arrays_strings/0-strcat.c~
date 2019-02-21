@@ -1,0 +1,28 @@
+#include "holberton.h"
+
+/**
+ *_strcat - concatenates two strings
+ *
+ *_putchar: put a character
+ *
+ *Return: return a character
+ */
+
+char *_strcat(char *dest, char *src)
+{
+	int i; /*lenght of the source string*/
+	int j;/*lenght of the destination string*/
+	int k;
+
+	for (i = 0; src[i] != '\0'; i++)
+	{
+	}
+	k = 0;
+	for (j = i; dest[j] != '\0'; j++)
+	{
+		*(dest + i) = *(src + k);
+		k++;
+	}
+
+	return(dest);
+}
