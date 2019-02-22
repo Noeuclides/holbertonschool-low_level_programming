@@ -14,24 +14,16 @@
 
 char *_strncpy(char *dest, char *src, int n)
 {
-	int i; /*lenght of the source string*/
-	int j;/*lenght of the destination string*/
+	int j;
 
-	for (i = 0; dest[i] != '\0'; i++)
+	for (j = 0; j < n && src[j] != '\0'; j++)
 	{
+		dest[j] = src[j];
 	}
 
-	for (j = 0; j < n; j++)
+	for ( ; j < n; j++)
 	{
-		if (src[j] == '\0')
-		{
-			dest[j] = '\0';
-			src[j + 1] = '\0';
-		}
-		else
-		{
-			*(dest + j) = *(src + j);
-		}
+		dest[j] = '\0';
 	}
 
 	return (dest);
