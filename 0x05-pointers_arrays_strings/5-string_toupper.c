@@ -3,7 +3,7 @@
 /**
  *string_toupper - change all lowercase to upper
  *
- * *: pointer array
+ *@s: pointer array
  *
  *Return: return character succeed
  *
