@@ -12,25 +12,22 @@
 
 int _strcmp(char *s1, char *s2)
 {
-	int i; /*lenght of the source string*/
-	int j;/*lenght of the destination string*/
+	int i;
+	int j;
+	int comp;
 
-	for (i = 0; dest[i] != '\0'; i++)
+	for (i = 0; s1[i] != '\0'; i++)
 	{
 	}
-
-	for (j = 0; j < n; j++)
+	for (j = 0; s2[j] != '\0'; j++)
 	{
-		if (src[j] == '\0')
-		{
-			dest[j] = '\0';
-			src[j + 1] = '\0';
-		}
-		else
-		{
-			*(dest + j) = *(src + j);
-		}
 	}
+	if (i > j)
+		comp = 15;
+	else if (i < j)
+		comp = -15;
+	else
+		comp = 0;
 
-	return (dest);
+	return (comp);
 }
