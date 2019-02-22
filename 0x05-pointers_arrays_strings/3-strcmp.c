@@ -22,12 +22,20 @@ int _strcmp(char *s1, char *s2)
 	for (j = 0; s2[j] != '\0'; j++)
 	{
 	}
-	if (i > j)
-		comp = 15;
-	else if (i < j)
-		comp = -15;
-	else
-		comp = 0;
 
+	while (s1[i] - s2[i] != 0)
+	{
+		if (s1[i] - s2[i] < 0)
+		{
+			comp = s2[i] - s1[i];
+		}
+		else if (s1[i] - s2[i] > 0)
+		{
+			comp = -1 * (s2[i] - s1[i]);
+		}
+		i++;
+	}
+	comp = 0;
+	
 	return (comp);
 }
