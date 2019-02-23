@@ -13,11 +13,11 @@ char *leet(char *s)
 {
 	int i;
 	int j;
-	char upper[] = "A, E, O, T, L";
-	char low[] = "a, e, o, t, l";
-	char leet[] = "4, 3, 0, 7, 1";
+	char upper[] = "AEOTL";
+	char low[] = "aeotl";
+	char leet[] = "43071";
 
-	for (i = 0; s[i] != 0; i++)
+	for (i = 0; s[i] != '\0'; i++)
 	{
 		for (j = 0; j < 5; j++)
 		{
@@ -25,5 +25,6 @@ char *leet(char *s)
 				s[i] = leet[j];
 		}
 	}
+
 	return (s);
 }
