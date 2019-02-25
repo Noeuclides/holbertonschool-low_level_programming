@@ -3,11 +3,11 @@
 /**
  **_memcpy - replace the first characters of an array by a set char n times
  *
- *@dest: destination array where the content is to be copied
+ *@dest: character array
  *
- *@src: source of the data to be copied
+ *@src: character which its going to replace the first chars of the main array
  *
- *@n: number of bytes to be copied
+ *@n: number of times in which our char variable its going to be put
  *
  *Return: char when succeed
  */
@@ -16,7 +16,7 @@ char *_memcpy(char *dest, char *src, unsigned int n)
 {
 	unsigned int i;
 
-	for (i = 0; i < n; i++)
+	for (i = 0; i <= n; i++)
 	{
 		dest[i] = src[i];
 	}
