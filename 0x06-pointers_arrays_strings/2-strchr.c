@@ -13,7 +13,6 @@
 char *_strchr(char *s, char c)
 {
 	int i = 0;
-	int j;
 
 	while (s[i] != c)
 	{
