@@ -1,27 +1,16 @@
 #include "holberton.h"
 
 /**
- *set_string - examine a string and found a character
+ *set_string - set the value of a pointer to a char
  *
- *@s: string to be examinated
+ *@s: string copied
  *
- *@to: character to be found
+ *@to: string to be copied
  *
  */
 
 void set_string(char **s, char *to)
 {
-	int i;
-	int j;
-	unsigned int n;
+	*s = to;
 
-	for (i = 0; s[i] != '\0'; i++)
-	{
-		for (j = 0; accept[j] = '
-		if (s[i] == c)
-		{
-			return (&s[i]);
-		}
-	}
-	return (0);
 }
