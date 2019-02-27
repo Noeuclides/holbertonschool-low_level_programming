@@ -3,11 +3,9 @@
 /**
  *factorial - lenght of a string recursevely
  *
- *n: integer to be factorialized
+ *@n: integer to be factorialized
  *
- *_putchar: put chararacter
- *
- *Return: 0 finish, 1 keeps recursion
+ *Return: integer succeed, -1 when is negative, 1 when n = 0(exit condition)
  */
 
 int factorial(int n)
