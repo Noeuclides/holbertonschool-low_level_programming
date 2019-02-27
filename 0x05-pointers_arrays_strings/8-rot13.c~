@@ -12,15 +12,11 @@
 char *rot13(char *s)
 {
 	int i;
-	int j;
-	char f13[] = "ABCDEFGHIJKLMabcdefghijklm";
-	char s13[] = "NOPQRSTUVWXYZnopqrstuvwxyz";
 
 	for (i = 0; s[i] != '\0'; i++)
 	{
-		for (j = 0; j <= 26; j++)
-			     if ((s[i] == f13[j] + 13 || s[i] == s13[j] - 13))
-				     s[i] = f13[j];
+		if ((s[i] >= 65 && s[i] <= 77) || (s[i] >= 97 && s[i] <= 109))
+			s[i] += 13;
 	}
 
 	return (s);

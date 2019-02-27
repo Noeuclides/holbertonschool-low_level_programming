@@ -2,14 +2,14 @@
 #include "holberton.h"
 
 /**
- *main - entry point
+ *prime_list - entry point
  *
  *printf: print prime number
  *
  *Return: 0 always (succeed)
  */
 
-int main(void)
+long prime_list(void)
 {
 	int n;
 	int i;
@@ -31,6 +31,6 @@ int main(void)
 		}
 		cont = 0;
 	}
-	prime_list
+
 	return (0);
 }

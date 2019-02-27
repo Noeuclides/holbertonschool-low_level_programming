@@ -31,6 +31,6 @@ int main(void)
 		}
 		cont = 0;
 	}
-	prime_list
+
 	return (0);
 }
