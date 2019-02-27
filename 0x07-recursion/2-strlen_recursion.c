@@ -1,9 +1,9 @@
 #include "holberton.h"
 
 /**
- *_strlen_recursion - put recursevely a char but in reverse
+ *_strlen_recursion - lenght of a string recursevely
  *
- *@s: string input to be reversed
+ *@s: string
  *
  *_putchar: put chararacter
  *
