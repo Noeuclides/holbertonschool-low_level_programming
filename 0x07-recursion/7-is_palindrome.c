@@ -11,10 +11,12 @@
 int is_palindrome(char *s)
 {
 	int m;
-
-	if (n / 2 > 1)
+	count = _strlen_recursion(*s);
+	if (count % 2 == 0)
 	{
-		m = _sqrt_recursion(n / 2);
+		if (s 
+		m = is_palindrome(s + 1);
+
 		return (funaux(m, n));
 	}
 	else if (n / 2 == 1 || n / 2 == 0)
