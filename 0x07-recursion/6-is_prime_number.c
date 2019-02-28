@@ -14,7 +14,7 @@ int is_prime_number(int n)
 
 	if (n / 2 > 1)
 	{
-		m = _sqrt_recursion(n / 2);
+		m = n;
 		return (funaux(m, n));
 	}
 	else if (n / 2 == 1 || n / 2 == 0)
