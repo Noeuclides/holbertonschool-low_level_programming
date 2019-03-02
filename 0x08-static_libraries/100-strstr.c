@@ -10,7 +10,8 @@
 
 char *_strstr(char *haystack, char *needle)
 {
-
+	_putchar(*haystack);
+	_putchar(*needle);
 
 	return(0);
 
