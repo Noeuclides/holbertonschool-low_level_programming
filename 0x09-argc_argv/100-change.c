@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include "holberton.h"
+#include <stdlib.h>
 
 /**
 *main - entry point
@@ -20,7 +20,7 @@ int main(int argc, char *argv[])
 
 	if (argc == 2)
 	{
-		n = _add(2, argv);
+		n = atoi(argv[1]);
 		if (n < 0)
 			printf("0\n");
 		else if (n == 0)
