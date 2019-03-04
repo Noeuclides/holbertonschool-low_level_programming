@@ -13,14 +13,21 @@ char *rot13(char *s)
 {
 	int i;
 	int j;
-	char f13[] = "ABCDEFGHIJKLMabcdefghijklm";
-	char s13[] = "NOPQRSTUVWXYZnopqrstuvwxyz";
+	int n = 0;
+	char f13[] = "ABCDEFGHIJKLMabcdefghijklmNOPQRSTUVWXYZnopqrstuvwxyz";
+	char s13[] = "NOPQRSTUVWXYZnopqrstuvwxyzABCDEFGHIJKLMabcdefghijklm";
 
 	for (i = 0; s[i] != '\0'; i++)
 	{
-		for (j = 0; j <= 26; j++)
-			     if ((s[i] == f13[j] + 13 || s[i] == s13[j] - 13))
-				     s[i] = f13[j];
+		for (j = 0; f13[j] != '\0' && n == 0; j++)
+		{
+			if (s[i] == f13[j])
+			{
+				s[i] = s13[j];
+				n = 1;
+			}
+		}
+		n = 0;
 	}
 
 	return (s);
