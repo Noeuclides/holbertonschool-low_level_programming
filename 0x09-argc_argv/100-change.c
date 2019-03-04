@@ -16,18 +16,18 @@
 int main(int argc, char *argv[])
 {
 	int cents[5] = {25, 10, 5, 2, 1};
-	int n, i;
-	int count = 0;
+	int n, i, count = 0;
 
 	if (argc == 2)
 	{
 		n = _add(2, argv);
 		if (n < 0)
 			printf("0\n");
-
 		else if (n == 0)
+		{
+			printf("0\n");
 			return (0);
-
+		}
 		else
 		{
 			for (i = 0; i <= 4; i++)
