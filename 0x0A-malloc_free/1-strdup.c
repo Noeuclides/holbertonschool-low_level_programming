@@ -2,12 +2,12 @@
 #include <stdlib.h>
 
 /**
- ***_strdup - create an array of char
- *
- *@str: string parameter
- *
- *Return: array of char
- */
+***_strdup - create an array of char
+*
+*@str: string parameter
+*
+*Return: array of char
+*/
 
 char *_strdup(char *str)
 {

@@ -17,35 +17,44 @@ char *str_concat(char *s1, char *s2)
 	unsigned int i, j, k, n, concat;
 
 	if (s1 == NULL)
-		return (NULL);
-
+		i = 0;
+	else
+	{
+		for (i = 0; s1[i] != '\0'; i++)
+		{
+		}
+	}
 	if (s2 == NULL)
-		return (NULL);
-
-
-	for (i = 0; s1[i] != '\0'; i++)
+		j = 0;
+	else
 	{
+		for (j = 0; s2[j] != '\0'; j++)
+		{
+		}
 	}
-
-	for (j = 0; s2[j] != '\0'; j++)
-	{
-	}
-
 	concat = i + j;
 
-	p = malloc(sizeof(char) * concat);
+	p = malloc(sizeof(char) * (concat + 1));
 
 	if (!p)
 		return (NULL);
 
+	if (s1 == NULL && s2 == NULL)
+		return ('\0');
+
 	for (n = 0; n <= i; n++)
 	{
-		p[n] = s1[n];
+		if (s1 != NULL)
+			p[n] = s1[n];
+		else
+			p[0] = '\0';
 	}
 	for (n = i, k = 0; n <= concat && k <= j; n++, k++)
 	{
-		p[n] = s2[k];
+		if (s2 != NULL)
+			p[n] = s2[k];
+		else
+			p[n + 1] = '\0';
 	}
-
 	return (p);
 }
