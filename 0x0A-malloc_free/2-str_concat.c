@@ -44,7 +44,7 @@ char *str_concat(char *s1, char *s2)
 		else
 			p[0] = '\0';
 	}
-	for (n = i, k = 0; n <= concat && k <= j; n++, k++)
+	for (n = i, k = 0; n < concat && k <= j; n++, k++)
 	{
 		if (s2 != NULL)
 			p[n] = s2[k];
