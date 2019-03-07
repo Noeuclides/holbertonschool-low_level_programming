@@ -13,26 +13,30 @@
 
 int **alloc_grid(int width, int height)
 {
-	int *w;
-	int *h,
-	unsigned int i, j, k, n, concat;
+	int **matrix;
+	int i, j;
 
-	w = malloc(sizeof(int) * (width));
-	h = malloc(sizeof(int) * (height));
+	matrix = malloc(sizeof(int*) * (width));
 
-	if (!p)
+	if (!matrix)
 		return (NULL);
 
 	if (width <= 0 || height <= 0)
 		return (NULL);
 
-	for (i = 0; i < height; n++)
+	for (i = 0; i < width; i++)
 	{
-		for (j = 0; j < width; j++)
+		matrix[i] = malloc(sizeof(int) * height);
+
+		for (j = 0; j < height; j++)
 		{
-				w[j] = 0;
+			if (!matrix)
+			{
+				free(matrix);
+				return (NULL);
+			}
+			matrix[i][j] = 0;
 		}
 	}
-
-	return (p);
+	return (matrix);
 }
