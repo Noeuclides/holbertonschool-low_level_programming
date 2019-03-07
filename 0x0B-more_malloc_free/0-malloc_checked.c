@@ -11,16 +11,14 @@
 
 void *malloc_checked(unsigned int b)
 {
-	int *n;
+	void *n;
 
 	n = malloc(b);
 
 	if (!n)
 	{
-		free(n);
 		exit(98);
 	}
 
 	return (n);
-
 }
