@@ -26,7 +26,6 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 		for (i = 0; s1[i] != '\0'; i++)
 			;
 	}
-
 	if (s2 == NULL)
 		s2 = "";
 	else
@@ -35,26 +34,17 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 			;
 		j++;
 	}
-
 	if (n >= j)
 		concat = i + j;
 	else
-		concat = i + n;
-
+		concat = i + n + 1;
 	p = malloc(sizeof(char) * concat);
-
 	if (!p)
-	{
 		return (NULL);
-	}
 	for (m = 0; m < i; m++)
-	{
 		p[m] = s1[m];
-	}
-	for (m = i, k = 0; m <= concat && k <= j; m++, k++)
-	{
+	for (m = i, k = 0; m <= concat - 1 && k <= j; m++, k++)
 		p[m] = s2[k];
-	}
-
+	p[concat] = '\0';
 	return (p);
 }
