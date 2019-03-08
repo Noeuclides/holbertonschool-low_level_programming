@@ -2,19 +2,19 @@
 #include <stdlib.h>
 
 /**
-* *array_range - create an array of integers
-*
-*@min: min value
-*
-*@max: max value
-*
-*Return: the pointer
-**/
+ * *array_range - create an array of integers
+ *
+ *@min: min value
+ *
+ *@max: max value
+ *
+ *Return: the pointer
+ **/
 
 int *array_range(int min, int max)
 {
 	int *p;
-	int i, num;
+	int i, j, num;
 
 	num = max - min;
 
@@ -24,9 +24,9 @@ int *array_range(int min, int max)
 
 		if (!p)
 			return (NULL);
-		for (i = 0; i <= num; i++)
+		for (i = 0, j = min; j <= max; i++, j++)
 		{
-			p[i] = min + i;
+			p[i] = j;
 		}
 	}
 	else
