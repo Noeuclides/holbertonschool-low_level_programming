@@ -1,10 +1,17 @@
 #ifndef STRUCT_1
-#define STRUCK_1
+#define STRUCT_1
+#include "dog.h"
 
 /**
- * free_dog - structure
+ * struct dog - structure
  *
- * Return:
+ *@name: name of the dog
+ *
+ *@age: age of the dog
+ *
+ *@owner: owner of the dog
+ *
+ *
  */
 
 struct dog
