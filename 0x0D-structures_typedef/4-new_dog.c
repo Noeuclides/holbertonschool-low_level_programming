@@ -60,13 +60,13 @@ dog_t *new_dog(char *name, float age, char *owner)
 
 	snoopy->name = _strdup(name);
 	if (snoopy->name == NULL)
-		free(snoopy);
+		free(snoopy->name);
 	snoopy->age = age;
 	snoopy->owner = _strdup(owner);
 	if (snoopy->owner == NULL)
 	{
 		if (snoopy->name == NULL)
-			free(snoopy);
+			free(snoopy->name);
 		free(snoopy);
 	}
 
