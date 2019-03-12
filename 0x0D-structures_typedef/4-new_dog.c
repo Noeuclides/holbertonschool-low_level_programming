@@ -16,7 +16,7 @@ char *_strdup(char *str)
 	char *p;
 	unsigned int i, j;
 
-	if (str == '\0')
+	if (str == NULL)
 		return (NULL);
 
 	for (i = 0; str[i] != '\0'; i++)
@@ -24,7 +24,7 @@ char *_strdup(char *str)
 		;
 	}
 
-	p = malloc(sizeof(char) *i + 1);
+	p = malloc(sizeof(char) * (i + 1));
 
 	if (!p)
 		return (NULL);
@@ -57,21 +57,21 @@ dog_t *new_dog(char *name, float age, char *owner)
 	snoopy = malloc(sizeof(dog_t));
 
 	if (!snoopy)
+	{
+		free(snoopy);
 		return (NULL);
+	}
 
 	snoopy->name = _strdup(name);
 	if (snoopy->name == NULL)
 	{
-		free(name);
 		free(snoopy);
 	}
-
 	snoopy->age = age;
 	snoopy->owner = _strdup(owner);
 	if (snoopy->owner == NULL)
 	{
 		free(name);
-		free(owner);
 		free(snoopy);
 	}
 
