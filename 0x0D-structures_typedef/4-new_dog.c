@@ -26,7 +26,7 @@ char *_strdup(char *str)
 
 	p = malloc(sizeof(char) * (i + 1));
 
-	if (!p)
+	if (p == NULL)
 		return (NULL);
 
 	for (j = 0; j < i; j++)
@@ -56,7 +56,7 @@ dog_t *new_dog(char *name, float age, char *owner)
 
 	snoopy = malloc(sizeof(dog_t));
 
-	if (!snoopy)
+	if (snoopy == NULL)
 	{
 		return (NULL);
 	}
