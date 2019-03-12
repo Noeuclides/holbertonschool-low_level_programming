@@ -1,20 +1,17 @@
-#include "dog.h"
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
+#include "dog.h"
 
 /**
- **new_dog - new dog function copy original
+ *_strdup - dup string function
  *
- *@name: name of my dog
+ *@str: string to copy
  *
- *@age: age of my dog
- *
- *@owner: owner of my dog
- *
- *Return: my dog copy
+ *Return: string copied
  */
-char *_strdup(char *str)
+
+char *_strdup(char str)
 {
 	char *p;
 	unsigned int i, j;
@@ -38,6 +35,19 @@ char *_strdup(char *str)
 
 	return (p);
 }
+
+/**
+ *new_dog - new dog function copy original
+ *
+ *@name: name of my dog
+ *
+ *@age: age of my dog
+ *
+ *@owner: owner of my dog
+ *
+ *Return: new dog
+ */
+
 dog_t *new_dog(char *name, float age, char *owner)
 {
 	dog_t *snoopy;
