@@ -11,7 +11,7 @@
  *Return: string copied
  */
 
-char *_strdup(char str)
+char *_strdup(char *str)
 {
 	char *p;
 	unsigned int i, j;
@@ -21,6 +21,7 @@ char *_strdup(char str)
 
 	for (i = 0; str[i] != '\0'; i++)
 	{
+		;
 	}
 
 	p = malloc(sizeof(char) * i + 1);

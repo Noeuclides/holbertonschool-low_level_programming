@@ -14,8 +14,10 @@
 
 void free_dog(dog_t *d)
 {
-	dog_t *snoopy;
-
-	free(d);
-	return (snoopy);
+	if (d != NULL)
+	{
+		free(d->name);
+		free(d->owner);
+		free(d);
+	}
 }
