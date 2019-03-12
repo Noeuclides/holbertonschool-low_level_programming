@@ -1,4 +1,4 @@
-B#include "dog.h"
+#include "dog.h"
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
@@ -14,7 +14,30 @@ B#include "dog.h"
  *
  *Return: my dog copy
  */
+char *_strdup(char *str)
+{
+	char *p;
+	unsigned int i, j;
 
+	if (str == '\0')
+		return (NULL);
+
+	for (i = 0; str[i] != '\0'; i++)
+	{
+	}
+
+	p = malloc(sizeof(char) * i + 1);
+
+	if (!p)
+		return (NULL);
+
+	for (j = 0; j <= i; j++)
+	{
+		p[j] = str[j];
+	}
+
+	return (p);
+}
 dog_t *new_dog(char *name, float age, char *owner)
 {
 	dog_t *snoopy;
@@ -24,11 +47,11 @@ dog_t *new_dog(char *name, float age, char *owner)
 	if (!snoopy)
 		return (NULL);
 
-	snoopy->name = strdup(name);
+	snoopy->name = _strdup(name);
 	if (snoopy->name == NULL)
 		free(snoopy);
 	snoopy->age = age;
-	snoopy->owner = strdup(owner);
+	snoopy->owner = _strdup(owner);
 	if (snoopy->owner == NULL)
 	{
 		if (snoopy->name == NULL)
