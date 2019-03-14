@@ -1,4 +1,5 @@
-#include <stdio>
+#include <stdio.h>
+#include <stdlib.h>
 
 /**
  *main - function of opcode
@@ -20,7 +21,7 @@ int main(int argc, char *argv[])
 	if (atoi(argv[1]) < 0)
 	{
 		printf("Error\n");
-		exit(2);
+		exit(1);
 	}
 	return (0);
 
