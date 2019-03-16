@@ -5,7 +5,7 @@
 #include <stdlib.h>
 
 /**
- * struct printed - Struct printed
+ * struct printed - struct printed
  *
  * @type: The operator
  * @prnt: The function associated
@@ -13,7 +13,7 @@
 
 typedef struct printed
 {
-	char *tipo;
+	char *type;
 	void (*prnt)(va_list);
 } p_p;
 
