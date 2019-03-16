@@ -4,11 +4,18 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+/**
+ * struct printed - Struct printed
+ *
+ * @type: The operator
+ * @prnt: The function associated
+ */
+
 typedef struct printed
 {
 	char *tipo;
 	void (*prnt)(va_list);
-}p_p;
+} p_p;
 
 int sum_them_all(const unsigned int n, ...);
 void print_numbers(const char *separator, const unsigned int n, ...);
