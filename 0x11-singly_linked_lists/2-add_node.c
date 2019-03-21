@@ -42,19 +42,21 @@ int _strlen(char *s)
 list_t *add_node(list_t **head, const char *str)
 {
 	char *strnew;
-	list_t * temp;
+	list_t *temp;
 
 	strnew = strdup(str);
 	temp = malloc(sizeof(list_t));
 	if (temp == NULL)
 	{
-		free (temp);
+		free(temp);
 		return (NULL);
 	}
 	temp->str = strnew;
 	temp->len = _strlen(strnew);
 	temp->next = *head;
 	*head = temp;
-
-	return (*head);
+	if (head)
+		return (*head);
+	else
+		return (NULL);
 }
