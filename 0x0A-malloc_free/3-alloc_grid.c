@@ -39,7 +39,7 @@ int **alloc_grid(int width, int height)
 			free(matrix);
 			return (NULL);
 		}
-		for (j = 0;j < width; j++)
+		for (j = 0; j < width; j++)
 		{
 			matrix[i][j] = 0;
 		}
