@@ -1,11 +1,10 @@
 #include <stdio.h>
+void print_before(void) __attribute__ ((constructor));
 
 /**
  *print_before - print before main
  *
  */
-
-void print_before(void) __attribute__ ((constructor))
 
 void print_before(void)
 {
