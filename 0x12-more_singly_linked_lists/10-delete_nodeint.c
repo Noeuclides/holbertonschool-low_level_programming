@@ -14,6 +14,9 @@ int delete_nodeint_at_index(listint_t **head, unsigned int index)
 	listint_t *nodetodel, *firstnode;
 	unsigned int i = 0;
 
+	if (*head == NULL)
+		return (-1);
+
 	firstnode = *head;
 	if (index != 0)
 	{
@@ -37,8 +40,6 @@ int delete_nodeint_at_index(listint_t **head, unsigned int index)
 			return (-1);
 		}
 	}
-	if (*head == NULL)
-		return (-1);
 
 	nodetodel = (*head)->next;
 	(*head)->next = nodetodel->next;
