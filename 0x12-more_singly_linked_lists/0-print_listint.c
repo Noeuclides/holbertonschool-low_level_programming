@@ -3,7 +3,7 @@
 /**
  * print_listint - function that prints integers in a list
  *
- *h: list of elements in a structure
+ *@h: list of elements in a structure
  *
  * Return: number of nodes
  */

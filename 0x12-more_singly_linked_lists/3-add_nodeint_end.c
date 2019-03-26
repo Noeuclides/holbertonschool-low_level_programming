@@ -3,9 +3,9 @@
 /**
  * add_nodeint_end - function that adds a node at the end
  *
- *head: pointer to a pointer with the address of the struct var
+ *@head: pointer to a pointer with the address of the struct var
  *
- *n: integer in the list
+ *@n: integer in the list
  *
  * Return: address of the new element
  */
@@ -20,7 +20,7 @@ listint_t *add_nodeint_end(listint_t **head, const int n)
 
 	if (!newnode)
 	{
-		free (newnode);
+		free(newnode);
 		return (NULL);
 	}
 	newnode->n = n;
@@ -32,7 +32,7 @@ listint_t *add_nodeint_end(listint_t **head, const int n)
 		return (*head);
 	}
 
-	while (lastnode->next !=NULL)
+	while (lastnode->next != NULL)
 	{
 		lastnode = lastnode->next;
 	}

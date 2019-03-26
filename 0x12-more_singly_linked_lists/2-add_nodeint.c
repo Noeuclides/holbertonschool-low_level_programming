@@ -3,9 +3,9 @@
 /**
  * add_nodeint - function that adds a new node at the beginning
  *
- *head: address of the pointer that points to a node
+ *@head: address of the pointer that points to a node
  *
- *n: interger in the node
+ *@n: interger in the node
  *
  * Return: variable type struct listint_t
  */
@@ -17,7 +17,7 @@ listint_t *add_nodeint(listint_t **head, const int n)
 
 	if (!newnode)
 	{
-		free (newnode);
+		free(newnode);
 		return (NULL);
 	}
 
