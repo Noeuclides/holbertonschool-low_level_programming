@@ -25,6 +25,11 @@ int delete_nodeint_at_index(listint_t **head, unsigned int index)
 			*head = (*head)->next;
 			i++;
 		}
+		if (i < index)
+		{
+			*head = firstnode;
+			return (-1);
+		}
 	}
 	else
 	{
@@ -40,7 +45,6 @@ int delete_nodeint_at_index(listint_t **head, unsigned int index)
 			return (-1);
 		}
 	}
-
 	nodetodel = (*head)->next;
 	(*head)->next = nodetodel->next;
 	nodetodel = NULL;
