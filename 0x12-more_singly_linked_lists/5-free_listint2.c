@@ -12,7 +12,7 @@ void free_listint2(listint_t **head)
 	listint_t *freenode2;
 
 	if (!head)
-		exit(12);
+		return;
 
 	while (*head != NULL)
 	{
