@@ -32,7 +32,7 @@ ssize_t read_textfile(const char *filename, size_t letters)
 		close(fd);
 		return (0);
 	}
-	n = read (fd, p, letters);
+	n = read(fd, p, letters);
 	if (n == -1)
 		return (0);
 
