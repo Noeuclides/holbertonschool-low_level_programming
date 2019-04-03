@@ -1,5 +1,6 @@
 #include "holberton.h"
 #include <fcntl.h>
+#include <unistd.h>
 
 /**
  * read_textfile - function that reads a text file and prints it to the POSIX
@@ -12,20 +13,33 @@
  */
 ssize_t read_textfile(const char *filename, size_t letters)
 {
-	ssize_t fd, n;
+	ssize_t fd, n,  w;
+	char *p;
 
-
+	if (filename == NULL)
+		return (0);
 	fd = open(filename, O_RDONLY);
 	if (fd == -1)
 	{
 		close(fd);
 		return (0);
 	}
-	if (filename == NULL)
+
+	p = malloc(sizeof(char) * letters);
+	if (!p)
+	{
+		free(p);
+		close(fd);
 		return (0);
-	n = read (fd, filename, letters);
+	}
+	n = read(fd, p, letters);
+	if (n == -1)
+		return (0);
 
-
+	w = write(STDOUT_FILENO, p, n);
+	if (w == -1)
+		return (0);
+	free(p);
+	close(fd);
 	return (n);
-
 }
