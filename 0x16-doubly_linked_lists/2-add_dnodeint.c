@@ -1,7 +1,7 @@
 #include "lists.h"
 
 /**
- * create_node - function that creates a node of a structure type
+ * create_node1 - function that creates a node of a structure type
  *
  * @new: new node to create
  *
@@ -9,7 +9,7 @@
  *
  * Return: the address of the new element, or NULL if it failed
  */
-dlistint_t *create_node(dlistint_t *new, const int n)
+dlistint_t *create_node1(dlistint_t *new, const int n)
 {
 	new = malloc(sizeof(dlistint_t));
 	if (!new)
@@ -36,7 +36,7 @@ dlistint_t *add_dnodeint(dlistint_t **head, const int n)
 {
 	dlistint_t *new = NULL, *tail = NULL;
 
-	new = create_node(new, n);
+	new = create_node1(new, n);
 	if (!new)
 		return (NULL);
 
