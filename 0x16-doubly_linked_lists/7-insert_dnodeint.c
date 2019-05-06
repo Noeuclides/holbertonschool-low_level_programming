@@ -39,12 +39,17 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 	unsigned int i;
 
 	new = create_nodeint(new, n);
+	if (new == NULL)
+		return (NULL);
 	ins = *h;
 	for (i = 0; i < idx; i++)
 	{
 		ins = ins->next;
 		if (ins == NULL)
+		{
+			free(new);
 			return (NULL);
+		}
 	}
 
 	aux = ins->prev;
