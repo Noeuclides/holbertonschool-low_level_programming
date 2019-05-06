@@ -1,13 +1,11 @@
 #include "lists.h"
 
 /**
- * delete_dnodeint_at_index - function that deletes the node at index of a list.
+ * del_last - function that deletes the last node at index of a list
  *
- * @head: head element of the list. 
+ * @del: del element of the list.
  *
- * @index:number of the node to delete. 
- *
- * Return: 1 if it succeeded, -1 if it failed 
+ * Return: 1 if it succeeded, -1 if it failed
  */
 int del_last(dlistint_t *del)
 {
@@ -17,38 +15,38 @@ int del_last(dlistint_t *del)
 	del->prev = NULL;
 	aux->next = NULL;
 	free(del);
-	return(1);
+	return (1);
 }
 
 
 /**
- * delete_dnodeint_at_index - function that deletes the node at index of a list.
+ * del_first - function that deletes the first node at index of a list
  *
- * @head: head element of the list. 
+ * @head: head element of the list.
  *
- * @index:number of the node to delete. 
+ * @del: node to del.
  *
- * Return: 1 if it succeeded, -1 if it failed 
+ * Return: 1 if it succeeded, -1 if it failed
  */
 int del_first(dlistint_t **head, dlistint_t *del)
 {
 	if (*head == NULL)
-		return(-1);
+		return (-1);
 	*head = (*head)->next;
 	(*head)->prev = NULL;
 	del->next = NULL;
 	free(del);
-	return(1);
+	return (1);
 }
 
 /**
- * delete_dnodeint_at_index - function that deletes the node at index of a list.
+ * delete_dnodeint_at_index - function that deletes the node at index of a list
  *
- * @head: head element of the list. 
+ * @head: head element of the list.
  *
- * @index:number of the node to delete. 
+ * @index:number of the node to delete.
  *
- * Return: 1 if it succeeded, -1 if it failed 
+ * Return: 1 if it succeeded, -1 if it failed
  */
 int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 {
@@ -56,7 +54,7 @@ int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 	unsigned int i, r;
 
 	if (*head == NULL || head == NULL)
-		return(-1);
+		return (-1);
 	del = *head;
 	for (i = 0; i < index; i++)
 	{
@@ -64,18 +62,18 @@ int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 		if (del == NULL)
 		{
 			free(head);
-			return(-1);
+			return (-1);
 		}
 	}
 	if (del == *head)
 	{
 		r = del_first(&*head, del);
-		return(r);
+		return (r);
 	}
 	if (del->next == NULL)
 	{
 		r = del_last(del);
-		return(r);
+		return (r);
 	}
 	aux = del->prev;
 	del->prev = NULL;
@@ -83,5 +81,5 @@ int delete_dnodeint_at_index(dlistint_t **head, unsigned int index)
 	del->next->prev = aux;
 	del->next = NULL;
 	free(del);
-	return(1);
+	return (1);
 }
