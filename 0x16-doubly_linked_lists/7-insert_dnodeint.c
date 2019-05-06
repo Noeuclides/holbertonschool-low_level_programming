@@ -14,7 +14,6 @@ dlistint_t *create_nodeint(dlistint_t *new, int n)
 	new = malloc(sizeof(dlistint_t));
 	if (!new)
 	{
-		free(new);
 		return (NULL);
 	}
 	new->n = n;
