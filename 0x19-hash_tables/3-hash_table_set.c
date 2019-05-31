@@ -15,8 +15,10 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
 	int hash;
 	char *k_aux = NULL, *v_aux = NULL;
-	hash_node_t *new = NULL;
+	hash_node_t *new = NULL, *aux = NULL;
 
+	if (strlen(key))
+		return (0);
 	new = malloc(sizeof(hash_node_t));
 	if (!new)
 		return (0);
@@ -24,6 +26,12 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	k_aux = strdup(key);
 	v_aux = strdup(value);
 	hash = hash_djb2((const unsigned char *)key);
+	aux = ht->array[hash];
+	for ( ; aux->next != NULL; aux = aux->next)
+	{
+		if (strcmp((const char *)aux->key, key) == 0)
+			return (1);
+	}
 	new->key = k_aux;
 	new->value = v_aux;
 	new->next = ht->array[hash];
