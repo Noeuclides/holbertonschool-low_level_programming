@@ -29,5 +29,17 @@ void hash_table_print(const hash_table_t *ht)
 		if (i > j && ht->array[i + 1] != NULL)
 			printf(", ");
 	}
+	if (ht->array[i] != NULL)
+	{
+		aux = ht->array[i];
+		while (aux != NULL)
+		{
+			printf("'%s': '%s'", aux->key, aux->value);
+			j = i;
+			aux = aux->next;
+			if (aux != NULL)
+				printf(", ");
+		}
+	}
 	printf("}\n");
 }
