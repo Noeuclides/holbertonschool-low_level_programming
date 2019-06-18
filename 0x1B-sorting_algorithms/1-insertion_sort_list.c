@@ -20,9 +20,14 @@ void swap_end_node(listint_t **p, listint_t **x, listint_t **n, listint_t **l)
 	(*x)->prev = (*p)->prev;
 	(*x)->next = *p;
 	(*p)->prev = *x;
-	*p = (*x)->prev;
-	(*p)->next = *x;
-	*n = (*x)->next;
+	if ((*x)->prev != NULL)
+	{
+		*p = (*x)->prev;
+		(*p)->next = *x;
+		*n = (*x)->next;
+	}
+	else
+		*l = *x;
 	print_list(*l);
 }
 
@@ -74,7 +79,7 @@ void insertion_sort_list(listint_t **list)
 	listint_t *auxp = NULL, *auxn = NULL, *x = NULL, *last = NULL;
 	int sw = 1;
 
-	if ((*list)->next == NULL)
+	if ((*list) == NULL || (*list)->next == NULL)
 		return;
 
 	auxp = *list;
@@ -89,6 +94,8 @@ void insertion_sort_list(listint_t **list)
 		else if (x->n < auxp->n && !(x->next))
 		{
 			swap_end_node(&auxp, &x, &auxn, list);
+			if (!auxn)
+				sw = 0;
 			last = auxn;
 		}
 		else

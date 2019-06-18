@@ -1,0 +1,2 @@
+output:
+	gcc -g -Wall -Wextra -Werror -pedantic 1-main.c 1-insertion_sort_list.c print_list.c -o insertion
