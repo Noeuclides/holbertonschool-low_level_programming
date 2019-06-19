@@ -45,10 +45,10 @@ void quick_sort_r(int *array, int first, int last, size_t size)
 	if (first < last)
 	{
 		pivot = partition(array, first, last, size);
-		/*sort the rigth part*/
-		quick_sort_r(array, pivot + 1, last, size);
 		/*sort the left part*/
 		quick_sort_r(array, first, pivot - 1, size);
+		/*sort the rigth part*/
+		quick_sort_r(array, pivot + 1, last, size);
 	}
 }
 
