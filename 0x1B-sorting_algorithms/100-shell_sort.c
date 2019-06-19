@@ -12,7 +12,7 @@ void shell_sort(int *array, size_t size)
 {
 	int gap, i, j, n, temp;
 
-	if (size < 2)
+	if (size < 2 || array == NULL)
 		return;
 	n = size;
 	/*n + 1 = n *3 + 1, change n for gap and find gap*/
