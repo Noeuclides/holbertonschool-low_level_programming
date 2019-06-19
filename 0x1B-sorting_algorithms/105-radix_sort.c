@@ -49,7 +49,7 @@ void counting_sort2(int *array, int **count, int dec, size_t size)
 int find_large_num(int *array, size_t size)
 {
 	size_t j;
-	int p, dec, large_num = 0;
+	int p = 1, dec, large_num = 0;
 
 	for (j = 0; j < size; j++)
 	{
@@ -87,7 +87,7 @@ void radix_sort(int *array, size_t size)
 		count[i] = 0;
 
 	large_num = find_large_num(array, size);
-	printf("large_num is %d\n", large_num);
+
 	/*fill count array with the times value index is repeated*/
 	for (dec = 1; large_num / dec != 0; dec *= 10)
 	{
