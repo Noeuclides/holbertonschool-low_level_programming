@@ -15,10 +15,14 @@ void shell_sort(int *array, size_t size)
 	if (size < 2 || array == NULL)
 		return;
 	n = size;
+	gap = 1;
 	/*n + 1 = n *3 + 1, change n for gap and find gap*/
-	gap = size / 3;
+	while (gap < (int)size)
+		gap = gap * 3 + 1;
+	
+	gap = (gap -1) / 3;
 	/*start for with gap +1, decrement gap / 3*/
-	gap += 1;
+	/*gap += 1;*/
 	for (; gap > 0; gap = (gap - 1) / 3)
 	{
 		/* iterate from gap to right part of the array*/
