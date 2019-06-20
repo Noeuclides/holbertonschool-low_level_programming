@@ -13,8 +13,10 @@ void quick_sort(int *array, size_t size)
 {
 	int first, last;
 
-	if (size < 2)
+	/*
+	 * if (size < 2)
 		return;
+	*/
 
 	/* set the first and last position*/
 	first = 0;
@@ -80,7 +82,7 @@ int partition(int *array, int first, int last, size_t size)
 			temp = array[i];
 			array[i] = array[j];
 			array[j] = temp;
-			if (i != j)
+			if (array[i] != array[j])
 				print_array(array, size);
 		}
 	}
@@ -88,7 +90,7 @@ int partition(int *array, int first, int last, size_t size)
 	temp = array[i + 1];
 	array[i + 1] = pivot;
 	array[last] = temp;
-	if (last != i + 1)
+	if (array[last] != array[i + 1])
 		print_array(array, size);
 	/*return i the new pivot position*/
 	return (i + 1);
