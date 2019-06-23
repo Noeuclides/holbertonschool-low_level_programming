@@ -4,18 +4,21 @@
  * counting_sort2 - Implementing radix sort LSD algorithm
  *
  * @array: array to sort
- * @count: array to count
  * @max: max number of the array
  * @size: size of the array
  *
- * Return: Nothing, print the array sort
+ * Return: array of integer, NULL if it fails.
  **/
 
-void counting_sort2(int *array, int **count, int max, size_t size)
+int *counting_sort2(int *array, int max, size_t size)
 {
+	int *count = NULL;
 	size_t i;
 	int j, k, temp, temp2;
 
+	count = malloc(sizeof(int) * (max + 1));
+	if (!count)
+		return (NULL);
 	k = 0;
 	for (j = 0; j <= max; j++)
 	{
@@ -24,18 +27,19 @@ void counting_sort2(int *array, int **count, int max, size_t size)
 			if (array[i] == j)
 				k++;
 		}
-		*(*count + j) = k;
+		count[j] = k;
 	}
-	print_array(*count, max);
+	print_array(count, max);
 	/*shift count array to the right*/
-	temp = *(*count);
-	*(*count) = 0;
+	temp = count[0];
+	count[0] = 0;
 	for  (j = 1; j <= max; j++)
 	{
-		temp2 = *(*count + i);
-		*(*count + i) = temp;
+		temp2 = count[i];
+		count[i] = temp;
 		temp = temp2;
 	}
+	return (count);
 }
 
 /**
@@ -78,24 +82,24 @@ int find_max(int *array, size_t size)
 void counting_sort(int *array, size_t size)
 {
 	int *count = NULL, *new = NULL;
-	size_t i, index_new;
-	int max = 0;
+	size_t i = 0;
+	int max = 0, index_new = 0;
 
 	if (size < 2 || array == NULL)
 		return;
 
 	max = find_max(array, size);
 
-	/*create new array and fill it*/
-	new = malloc(sizeof(int) * size);
-	if (!new)
-		return;
-	count = malloc(sizeof(int) * (max + 1));
-	if (!count)
-		return;
 	max += 1;
 
-	counting_sort2(array, &count, max, size);
+	count = counting_sort2(array, max, size);
+	if (!count)
+		return;
+
+	/*create new array and fill it*/
+	new = malloc(sizeof(int) * size * 2);
+	if (!new)
+		return;
 
 	for (i = 0; i < size; i++)
 	{
@@ -103,8 +107,8 @@ void counting_sort(int *array, size_t size)
 		new[index_new - 1] = array[i];
 		count[array[i]] += 1;
 	}
+	free(count);
 	for (i = 0; i < size; i++)
 		array[i] = new[i];
-	/*free(new);*/
-	/*free(count);*/
+	free(new);
 }
