@@ -86,17 +86,16 @@ void counting_sort(int *array, size_t size)
 
 	max = find_max(array, size);
 
+	/*create new array and fill it*/
+	new = malloc(sizeof(int) * size);
+	if (!new)
+		return;
 	count = malloc(sizeof(int) * (max + 1));
 	if (!count)
 		return;
 	max += 1;
 
 	counting_sort2(array, &count, max, size);
-
-	/*create new array and fill it*/
-	new = malloc(sizeof(int) * size);
-	if (!new)
-		return;
 
 	for (i = 0; i < size; i++)
 	{
@@ -106,6 +105,6 @@ void counting_sort(int *array, size_t size)
 	}
 	for (i = 0; i < size; i++)
 		array[i] = new[i];
-	free(new);
-	free(count);
+	/*free(new);*/
+	/*free(count);*/
 }
