@@ -19,30 +19,3 @@ int main(void)
     printf("Found %d at index: %d\n", 999, exponential_search(array, size, 999));
     return (EXIT_SUCCESS);
 }
-wilfried@0x1E-search_algorithms$ gcc -Wall -Wextra -Werror -pedantic 103-main.c 103-exponential.c -o 103-exponential
-wilfried@0x1E-search_algorithms$ ./103-exponential 
-Value checked array[1] = [1]
-Value checked array[2] = [2]
-Value checked array[4] = [4]
-Value checked array[8] = [18]
-Value found between indexes [8] and [15]
-Searching in array: 18, 19, 23, 54, 61, 62, 76, 99
-Searching in array: 61, 62, 76, 99
-Found 62 at index: 13
-
-Value checked array[1] = [1]
-Value checked array[2] = [2]
-Value found between indexes [2] and [4]
-Searching in array: 2, 3, 4
-Found 3 at index: 3
-
-Value checked array[1] = [1]
-Value checked array[2] = [2]
-Value checked array[4] = [4]
-Value checked array[8] = [18]
-Value found between indexes [8] and [15]
-Searching in array: 18, 19, 23, 54, 61, 62, 76, 99
-Searching in array: 61, 62, 76, 99
-Searching in array: 76, 99
-Searching in array: 99
-Found 999 at index: -1
