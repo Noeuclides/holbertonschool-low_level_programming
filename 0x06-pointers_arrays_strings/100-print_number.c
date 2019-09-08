@@ -1,4 +1,5 @@
 #include "holberton.h"
+#include <stdio.h>
 
 /**
  **print_number - print an integer with __putchar function
@@ -11,7 +12,7 @@
 
 void print_number(int n)
 {
-	int d = 10, num = 0, ntop = 0;
+	unsigned int d = 10, num = 0, ntop = 0, m = 0;
 
 	if (n == 0)
 	{
@@ -21,16 +22,17 @@ void print_number(int n)
 	if (n < 0)
 	{
 		_putchar('-');
-		n = n * (-1);
+		m = n * (-1);
 	}
 
-	while (n / d > 0)
+	m = n;
+	while (m / d > 0)
 		d *= 10;
 
 	d = d / 10;
 	for (; d >= 1; d = d / 10)
 	{
-		num = n / d;
+		num = m / d;
 		ntop = (num % 10) + 48;
 		_putchar(ntop);
 	}
