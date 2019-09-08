@@ -12,7 +12,7 @@
 
 void print_number(int n)
 {
-	unsigned int d = 10, num = 0, ntop = 0, m = 0;
+	unsigned int d = 10, num = 0, ntop = 0, m = n;
 
 	if (n == 0)
 	{
@@ -25,11 +25,9 @@ void print_number(int n)
 		m = n * (-1);
 	}
 
-	m = n;
-	while (m / d > 0)
+	while (m / d >= 10)
 		d *= 10;
 
-	d = d / 10;
 	for (; d >= 1; d = d / 10)
 	{
 		num = m / d;
